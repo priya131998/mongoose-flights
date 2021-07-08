@@ -5,6 +5,7 @@ const Flight = require('../models/flight')
     index,
     new: newFlight,
     create,
+    show
   };
 
   function index(req, res) {
@@ -30,3 +31,8 @@ function newFlight(req, res) {
       });
     };
   
+    function show(req, res) {
+      Flight.findById(req.params.id, function(err, flight) {
+        res.render('flights/show', { title: 'Flight Detail', flight });
+      });
+    }
