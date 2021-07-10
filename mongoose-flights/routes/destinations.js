@@ -1,7 +1,7 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-var destinationsCtrl = require('../controllers/destinations');
+var destinationsCtrl = require("../controllers/destinations");
 
-router.post('/flights/:id/destinations', destinationsCtrl.create);
+router.post("/flights/:id/destinations", destinationsCtrl.create);
 
 module.exports = router;
