@@ -24,7 +24,7 @@ function newFlight(req, res) {
 function create(req, res) {
   req.body.departs =
     req.body.departs === ""
-      ? new Date(new Date() + 730 * 24 * 60 * 60 * 1000)
+      ? new Date(new Date().setFullYear(new Date().getFullYear() - 1) + 730 * 24 * 60 * 60 * 1000)
       : req.body.departs;
   console.log(req.body);
   const flight = new Flight(req.body);
